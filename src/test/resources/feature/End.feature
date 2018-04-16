@@ -1,10 +1,11 @@
+@FunctionalTest
 Feature: End user
 
   Background: 
-    Given i have opened a selendroid-test-app
+    i have opened a selendroid-test-app
 	
-	@tag3
+	@EndtoEnd
 	Scenario:
-		And i click button En Button in "buttonTest"
+		And i click button En in "buttonTest"
 		When i click button No, no in "button2"
 		Then verify home page tittle is "selendroid-test-app" in "title" 

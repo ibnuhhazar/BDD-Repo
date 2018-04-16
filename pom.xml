@@ -75,6 +75,21 @@
 			<artifactId>cucumber-report-generator</artifactId>
 			<version>1.3.1</version>
 		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>apache-log4j-extras</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>build-helper-maven-plugin</artifactId>
+			<version>1.9.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -103,6 +118,25 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.9.1</version>
+				<executions>
+					<execution>
+						<id>timestamp-property</id>
+						<goals>
+							<goal>timestamp-property</goal>
+						</goals>
+						<configuration>
+							<name>current.time</name>
+							<pattern>yyyyMMdd-HHmmss</pattern>
+							<locale>en_UK</locale>
+							<timeZone>Asia/Jakarta</timeZone>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
 				<version>2.8.0</version>
@@ -116,6 +150,7 @@
 						<configuration>
 							<projectName>Execution Automation</projectName>
 							<outputDirectory>${project.build.directory}/cucumber-reports-html</outputDirectory>
+							<outputDirectory>C:/FeatureFile/Result/${current.time}-cucumber-reports-html</outputDirectory>
 							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
 						</configuration>
 					</execution>

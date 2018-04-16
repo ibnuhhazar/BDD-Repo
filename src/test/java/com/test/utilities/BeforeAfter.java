@@ -9,6 +9,7 @@ import java.util.Properties;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -23,9 +24,15 @@ public class BeforeAfter {
 	AndroidDriver driver;
 	Properties capabilitiesRepo = null;
 
+	Logger logger;
+
 	@SuppressWarnings("rawtypes")
 	@Before
 	public void openApplication() throws IOException, InterruptedException {
+
+		logger = Logger.getLogger(BeforeAfter.class);
+
+		logger.debug("Before Hook ...............................................");
 
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
@@ -39,26 +46,55 @@ public class BeforeAfter {
 				+ capabilitiesRepo.getProperty("pathAPK"));
 
 		// Specify the device name (any name)
-		desiredCapabilities.setCapability("deviceName", capabilitiesRepo.getProperty("1deviceName"));
+		desiredCapabilities.setCapability("deviceName",
+				capabilitiesRepo.getProperty("1deviceName"));
 
 		// Platform version
-		desiredCapabilities.setCapability("platformVersion", capabilitiesRepo.getProperty("1platformVersion"));
+		desiredCapabilities.setCapability("platformVersion",
+				capabilitiesRepo.getProperty("1platformVersion"));
 
 		// platform name
 		desiredCapabilities.setCapability("platformName", "Android");
-		
-		// install Apps
-		desiredCapabilities.setCapability(MobileCapabilityType.APP, path.getAbsolutePath());
-		
-		// specify the application package that we copied from appium
-		desiredCapabilities.setCapability("appPackage", capabilitiesRepo.getProperty("appPackage"));
 
-		// specify the application activity that we copied from appium
-		desiredCapabilities.setCapability("appActivity", capabilitiesRepo.getProperty("appActivity"));
+		// install Apps
+		desiredCapabilities.setCapability(MobileCapabilityType.APP,
+				path.getAbsolutePath());
+
+		logger.debug("Open Apps ...............................................");
+
+		desiredCapabilities.setCapability("appPackage",
+				capabilitiesRepo.getProperty("appPackage"));
+
+		desiredCapabilities.setCapability("appActivity",
+				capabilitiesRepo.getProperty("appActivity"));
 
 		driver = new AndroidDriver(
 				new URL(capabilitiesRepo.getProperty("1URL")),
 				desiredCapabilities);
+
+		/*
+		 * String kobitonServerUrl =
+		 * "https://boden:ac9a9d82-4a44-476a-b759-251dead4b2b8@api.kobiton.com/wd/hub"
+		 * ;
+		 * 
+		 * DesiredCapabilities capabilities = new DesiredCapabilities();
+		 * capabilities.setCapability("sessionName", "Automation test session");
+		 * capabilities.setCapability("sessionDescription", "");
+		 * capabilities.setCapability("deviceOrientation", "portrait");
+		 * capabilities.setCapability("captureScreenshots", true);
+		 * capabilities.setCapability("deviceGroup", "KOBITON");
+		 * capabilities.setCapability("deviceName", "Galaxy Note5");
+		 * capabilities.setCapability("platformVersion", "6.0.1");
+		 * capabilities.setCapability("platformName", "Android");
+		 * capabilities.setCapability("app", "kobiton-store:8235");
+		 * capabilities.setCapability("appPackage", "io.selendroid.testapp");
+		 * capabilities.setCapability("appActivity", ".HomeScreenActivity");
+		 * 
+		 * driver = new AndroidDriver(new URL(kobitonServerUrl), capabilities);
+		 */
+
+		logger.debug("Create Session ..............................................."
+				+ driver);
 
 	}
 
@@ -69,6 +105,10 @@ public class BeforeAfter {
 
 	@After
 	public void afterTest(Scenario scenario) throws Exception {
+		logger = Logger.getLogger(BeforeAfter.class);
+
+		logger.debug("After Hook ...............................................");
+
 		if (scenario.isFailed()) {
 			scenario.embed(((TakesScreenshot) driver)
 					.getScreenshotAs(OutputType.BYTES), "image/png");
@@ -76,6 +116,9 @@ public class BeforeAfter {
 		} else {
 			scenario.write("Scenario Pass");
 		}
+
+		logger.debug("Quit Session ..............................................."
+				+ driver);
 
 		driver.quit();
 	}
