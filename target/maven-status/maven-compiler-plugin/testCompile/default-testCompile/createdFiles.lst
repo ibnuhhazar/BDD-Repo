@@ -1,5 +1,0 @@
-com\test\stepdef\AbstractStepDefinition.class
-com\test\stepdef\StepDefinition.class
-com\test\utilities\Runner.class
-com\test\utilities\BeforeAfter.class
-com\test\eventConnector\ObjEvent.class

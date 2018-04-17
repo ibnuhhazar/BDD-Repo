@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.test.utilities.Runner
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 55.901 sec - in com.test.utilities.Runner
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.827 sec - in com.test.utilities.Runner
