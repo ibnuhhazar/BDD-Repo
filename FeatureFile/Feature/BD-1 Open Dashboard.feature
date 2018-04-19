@@ -7,6 +7,6 @@ Feature: End user
 	@demo
 	Scenario:
 		Given i at the home screen
-		when i click button En in "buttonTest"
+		When i click button En in "buttonTest"
 		When i click button No, no in "button2"
 		Then verify home page tittle is "selendroid-test-app" in "title" 
