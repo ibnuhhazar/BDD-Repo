@@ -14,6 +14,11 @@ public class StepDefinition extends AbstractStepDefinition {
 	public StepDefinition(BeforeAfter beforeAfter) {
 		super(beforeAfter);
 	}
+
+	@Given(".*?dashboard.*?")
+	public void dashboard(){
+	
+	}
 	
 	@Given(".*?loged.*? \"(.*?)\"$")
 	public void login(String userID){

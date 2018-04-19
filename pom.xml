@@ -142,7 +142,7 @@
 							<projectName>Execution Automation</projectName>
 							<outputDirectory>${project.build.directory}/cucumber-reports-html</outputDirectory>
 							<outputDirectory>FeatureFile/Result/${current.time}-cucumber-reports-html</outputDirectory>
-							<cucumberOutput>FeatureFile/log/cucumber.json</cucumberOutput>
+							<cucumberOutput>cucumber.json</cucumberOutput>
 						</configuration>
 					</execution>
 				</executions>

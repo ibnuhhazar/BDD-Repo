@@ -6,9 +6,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = { "json:FeatureFile//Log//cucumber.json","html:target//cucumber-pretty" }, 
+		plugin = { "json:cucumber.json","html:target//cucumber-pretty" }, 
 		features = { "FeatureFile//Feature" },
-	    tags = { "@demo" },
+	    tags = { "@FunctionalTest" },
 		glue = { "com.test.stepdef", "com.test.utilities" })
 public class Runner {
 	

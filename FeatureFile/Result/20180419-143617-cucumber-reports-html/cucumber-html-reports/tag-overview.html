@@ -49,32 +49,32 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels: ["@FunctionalTest","@demo"],
+        labels: ["@EndtoEnd","@FunctionalTest","@Smoketest","@demo","@sad"],
         datasets: [
             {
                 label: 'Passed',
                 backgroundColor: "#92DD96",
-                data: [0.00, 0.00]
+                data: [80.00, 93.33, 80.00, 100.00, 100.00]
             },
             {
                 label: 'Failed',
                 backgroundColor: "#F2928C",
-                data: [0.00, 0.00]
+                data: [20.00, 6.67, 20.00, 0.00, 0.00]
             },
             {
                 label: 'Skipped',
                 backgroundColor: "#8AF",
-                data: [75.00, 75.00]
+                data: [0.00, 0.00, 0.00, 0.00, 0.00]
             },
             {
                 label: 'Pending',
                 backgroundColor: "#F5F28F",
-                data: [0.00, 0.00]
+                data: [0.00, 0.00, 0.00, 0.00, 0.00]
             },
             {
                 label: 'Undefined',
                 backgroundColor: "#F5B975",
-                data: [25.00, 25.00]
+                data: [0.00, 0.00, 0.00, 0.00, 0.00]
             }
         ]
     };
@@ -135,7 +135,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>Execution Automation</td>
                           <td>1</td>
-                        <td>19 Apr 2018, 10:51</td>
+                        <td>19 Apr 2018, 14:38</td>
           </tr>
         </tbody>
       </table>
@@ -192,19 +192,49 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
+        <td class="tagname"><a href="EndtoEnd.html">@EndtoEnd</a></td>
+        
+        <td >0</td>
+        <td  class="failed"    >1</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td      class="failed"    >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="16757605178">16s 757ms</td>
+        <td class="failed">Failed</td>
+      </tr>
+          <tr>
         <td class="tagname"><a href="FunctionalTest.html">@FunctionalTest</a></td>
         
-        <td  class="passed"    >1</td>
+        <td  class="passed"    >2</td>
+        <td  class="failed"    >1</td>
+        <td class="total">3</td>
+        <td      class="passed"    >14</td>
+        <td      class="failed"    >1</td>
         <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">15</td>
+        <td class="duration" data-value="58236525846">58s 236ms</td>
+        <td class="failed">Failed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="Smoketest.html">@Smoketest</a></td>
+        
+        <td >0</td>
+        <td  class="failed"    >1</td>
         <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td      class="failed"    >1</td>
         <td >0</td>
         <td >0</td>
-        <td     class="skipped"   >3</td>
         <td >0</td>
-        <td   class="undefined" >1</td>
-        <td class="total">4</td>
-        <td class="duration" data-value="0">000ms</td>
-        <td class="passed">Passed</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="16757605178">16s 757ms</td>
+        <td class="failed">Failed</td>
       </tr>
           <tr>
         <td class="tagname"><a href="demo.html">@demo</a></td>
@@ -212,45 +242,60 @@ $(document).ready(function() {
         <td  class="passed"    >1</td>
         <td >0</td>
         <td class="total">1</td>
+        <td      class="passed"    >4</td>
         <td >0</td>
         <td >0</td>
-        <td     class="skipped"   >3</td>
         <td >0</td>
-        <td   class="undefined" >1</td>
+        <td >0</td>
         <td class="total">4</td>
-        <td class="duration" data-value="0">000ms</td>
+        <td class="duration" data-value="7083597935">7s 083ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="sad.html">@sad</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >6</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">6</td>
+        <td class="duration" data-value="34395322733">34s 395ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>2</td>
-            <td>2</td>
+      <td>5</td>
+            <td>3</td>
+      <td>4</td>
+      <td>7</td>
+      <td>32</td>
+      <td>3</td>
       <td>0</td>
-      <td>2</td>
       <td>0</td>
       <td>0</td>
-      <td>6</td>
-      <td>0</td>
-      <td>2</td>
-      <td>8</td>
-      <td class="duration">000ms</td>
+      <td>35</td>
+      <td class="duration">2m 13s 230ms</td>
       <td></td>
     </tr>
     <tr>
       <td></td>
-            <td>100.00%</td>
+            <td>42.86%</td>
+      <td>57.14%</td>
+      <td></td>
+      <td>91.43%</td>
+      <td>8.57%</td>
+      <td>0.00%</td>
+      <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
-      <td>0.00%</td>
-      <td>0.00%</td>
-      <td>75.00%</td>
-      <td>0.00%</td>
-      <td>25.00%</td>
       <td></td>
-      <td></td>
-      <td>0.00%</td>
+      <td>57.14%</td>
     </tr>
   </tfoot>
 </table>

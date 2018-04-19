@@ -13,7 +13,7 @@
         "before": [
           {
             "result": {
-              "duration": 13881890333,
+              "duration": 13518931883,
               "status": "passed"
             },
             "match": {
@@ -28,7 +28,7 @@
         "after": [
           {
             "result": {
-              "duration": 2583266697,
+              "duration": 2345749004,
               "status": "passed"
             },
             "match": {
@@ -41,16 +41,20 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 518163038,
+              "status": "passed"
             },
             "line": 9,
-            "name": "i at the home screen",
-            "match": {},
+            "name": "i at the dashboard",
+            "match": {
+              "location": "StepDefinition.dashboard()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2305614157,
+              "status": "passed"
             },
             "line": 10,
             "name": "i click button En in \"buttonTest\"",
@@ -67,7 +71,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4221322022,
+              "status": "passed"
             },
             "line": 11,
             "name": "i click button No, no in \"button2\"",
@@ -84,7 +89,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 346849554,
+              "status": "passed"
             },
             "output": [
               "Scenario Pass"
