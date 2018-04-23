@@ -57,9 +57,9 @@ public class StepDefinition extends AbstractStepDefinition {
 		objEvent.verifyElementExist(driver, objectName);
 	}
 
-	@Then(".*?verify.*? \"(.*?)\" in \"(.*?)\"$")
-	public void verifyEqual(String text, String objectName) {
+	@Then(".*?verify.*? \"(.*?)\" is \"(.*?)\"$")
+	public void verifyEqual(String objectName, String text) {
 		logger.debug("verifyEqual Object element " + objectName);
-		objEvent.verifyEqual(driver, text, objectName);
+		objEvent.verifyEqual(driver, objectName, text);
 	}	
 }

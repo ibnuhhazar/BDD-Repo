@@ -131,7 +131,7 @@ public class ObjEvent {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public void verifyEqual(AndroidDriver driver, String text, String objectName) {
+	public void verifyEqual(AndroidDriver driver, String objectName, String text) {
 		try {
 			logger.debug("Find Element " + By.id(androidPackage + objectName));
 			String getText = driver.findElement(
