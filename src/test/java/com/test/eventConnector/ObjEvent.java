@@ -22,7 +22,7 @@ public class ObjEvent {
 	public void logon(AndroidDriver driver, String userID) {
 		boolean found = false;
 		
-		String filePath = "C:\\FeatureFile\\DataFile\\test.txt";
+		String filePath = "\\LogFile\\DataFile\\test.txt";
 		String searchTerm = userID;
 		String ID = "";
 		String email = "";
