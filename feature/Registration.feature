@@ -16,7 +16,7 @@ Feature: Registration
     Then i verify, so that "label_preferedProgrammingLanguage_data" is "Java"
 
   @demo
-  Scenario: Registration user with java programming language
+  Scenario: Registration user with javaa programming language
     Given user is on dashboard
     When i click button start register "startUserRegistration"
     And i enter as username "Asterix" in "inputUsername"
