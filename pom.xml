@@ -109,25 +109,6 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.9.1</version>
-				<executions>
-					<execution>
-						<id>timestamp-property</id>
-						<goals>
-							<goal>timestamp-property</goal>
-						</goals>
-						<configuration>
-							<name>current.time</name>
-							<pattern>yyyyMMdd-HHmmss</pattern>
-							<locale>en_UK</locale>
-							<timeZone>Asia/Jakarta</timeZone>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
 				<version>2.8.0</version>
@@ -139,9 +120,10 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>Execution Automation</projectName>
-							<outputDirectory>result/cucumber-reports-html</outputDirectory>
+							<projectName>cucumber-jvm-example</projectName>
+							<outputDirectory>result</outputDirectory>
 							<cucumberOutput>cucumber.json</cucumberOutput>
+							<parallelTesting>false</parallelTesting>
 						</configuration>
 					</execution>
 				</executions>
